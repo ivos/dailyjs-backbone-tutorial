@@ -1,7 +1,8 @@
 node_modules/
-build/
-.project
-.settings/
+/npm-debug.log
+/build/
+/.project
+/.settings/
 
 /secret.txt
 /app/js/config.js

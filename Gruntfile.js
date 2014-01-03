@@ -1,5 +1,4 @@
 module.exports = function(grunt) {
-	grunt.loadNpmTasks('grunt-exec');
 
 	grunt
 			.initConfig({
@@ -10,11 +9,17 @@ module.exports = function(grunt) {
 				}
 			});
 
+	grunt.loadNpmTasks('grunt-exec');
+
+	grunt.registerTask('clean', function() {
+		 grunt.file.delete('build');
+	});
+
 	grunt.registerTask('copy-require', function() {
 		grunt.file.mkdir('build/js/lib');
 		grunt.file.copy('node_modules/requirejs/require.js',
 				'build/js/lib/require.js');
 	});
 
-	grunt.registerTask('default', ['exec', 'copy-require']);
+	grunt.registerTask('default', [ 'clean', 'exec', 'copy-require' ]);
 };
