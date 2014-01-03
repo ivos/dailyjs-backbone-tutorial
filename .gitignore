@@ -1,3 +1,7 @@
 node_modules/
 build/
 .project
+.settings/
+
+/secret.txt
+/app/js/config.js
